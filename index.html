@@ -60,40 +60,12 @@
         font-size: 20px;
         margin-top: 10px;
     }
-    .info {
-        margin-bottom: 20px;
-        padding: 15px;
-        background: #f0f4f8;
-        border-radius: 6px;
-    }
-    .info label {
-        display: block;
-        margin-bottom: 8px;
-    }
-    input[type="text"], input[type="email"] {
-        width: 100%;
-        padding: 8px;
-        margin-top: 4px;
-        box-sizing: border-box;
-    }
 </style>
 </head>
 
 <body>
 <div class="container">
-    <h1>Quiz – Intelligenza Emotiva e Comportamenti Professionali (Self Management)</h1>
-
-    <!-- Dati identificativi -->
-    <div class="info">
-        <label>
-            Nome e cognome
-            <input type="text" id="nome" placeholder="Inserisci il tuo nome" required>
-        </label>
-        <label>
-            Email
-            <input type="email" id="email" placeholder="Inserisci la tua email">
-        </label>
-    </div>
+    <h1>Quiz – Intelligenza Emotiva (Self Management)</h1>
 
     <form id="quizForm">
 
@@ -166,13 +138,6 @@
 
 <script>
 function calculateScore() {
-    const nome = document.getElementById("nome").value.trim();
-    const email = document.getElementById("email").value.trim();
-    if (!nome) {
-        alert("Per favore inserisci il tuo nome.");
-        return;
-    }
-
     let total = 0;
     const form = document.getElementById("quizForm");
 
@@ -223,13 +188,12 @@ function calculateScore() {
     document.querySelector(".level").innerHTML = "Livello: " + level;
     document.getElementById("interpretation").innerHTML = interpretation;
 
-  
+    // --- INVIO ANONIMO AL GOOGLE FORM: SOLO PUNTEGGIO ---
     const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd3eQrdoIcMHo1djtz_0OW3uJyBSbA4LbUA4rpVVsBSSY-ndg/formResponse";
 
     const data = new URLSearchParams();
-    data.append("entry.358686423", nome);  
-    data.append("entry.1679437078", email);  
-    data.append("entry.921026092", total);  
+    // entry.921026092 deve essere il campo "Punteggio totale" nel tuo Google Form
+    data.append("entry.921026092", total);
 
     fetch(formUrl, {
         method: "POST",
