@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quiz Competenze - Intelligenza Emotiva</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 850px;
+        margin: auto;
+        background: #fff;
+        padding: 25px 35px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    .question {
+        margin-bottom: 25px;
+        padding: 15px;
+        background: #fafafa;
+        border-left: 4px solid #1976d2;
+        border-radius: 6px;
+    }
+    .question h3 {
+        margin-top: 0;
+    }
+    button {
+        background: #1976d2;
+        color: white;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #0f5ba8;
+    }
+    .result-box {
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 8px;
+        background: #e3f2fd;
+        display: none;
+    }
+    .score {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .level {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+    .info {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #f0f4f8;
+        border-radius: 6px;
+    }
+    .info label {
+        display: block;
+        margin-bottom: 8px;
+    }
+    input[type="text"], input[type="email"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 4px;
+        box-sizing: border-box;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Quiz – Intelligenza Emotiva e Comportamenti Professionali (Self Management)</h1>
+
+    <!-- Dati identificativi -->
+    <div class="info">
+        <label>
+            Nome e cognome
+            <input type="text" id="nome" placeholder="Inserisci il tuo nome" required>
+        </label>
+        <label>
+            Email
+            <input type="email" id="email" placeholder="Inserisci la tua email">
+        </label>
+    </div>
+
+    <form id="quizForm">
+
+        <!-- Q1 -->
+        <div class="question">
+            <h3>1. Durante un comitato direttivo con il cliente, un senior stakeholder contesta le tue conclusioni in modo molto assertivo.</h3>
+            <label><input type="radio" name="q1" value="2"> A. Fermati, riconosci la preoccupazione e proponi di rivedere insieme le ipotesi.</label><br>
+            <label><input type="radio" name="q1" value="0"> B. Rispondi immediatamente difendendo la tua analisi.</label><br>
+            <label><input type="radio" name="q1" value="1"> C. Eviti di rispondere e speri di chiarire dopo.</label>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question">
+            <h3>2. Un collega ti invia una presentazione obsoleta poche ore prima della review con il cliente.</h3>
+            <label><input type="radio" name="q2" value="1"> A. Ti senti infastidito ma rifai tutto da solo.</label><br>
+            <label><input type="radio" name="q2" value="2"> B. Chiarisci rapidamente, raccogli gli input e riorganizzi il lavoro.</label><br>
+            <label><input type="radio" name="q2" value="0"> C. Coinvolgi il manager e segnali il ritardo.</label>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question">
+            <h3>3. Il cliente richiede modifiche significative all’agenda di un workshop con due giorni di preavviso.</h3>
+            <label><input type="radio" name="q3" value="0"> A. Mantieni il piano originale.</label><br>
+            <label><input type="radio" name="q3" value="2"> B. Adatti l’agenda e includi gli elementi più critici.</label><br>
+            <label><input type="radio" name="q3" value="1"> C. Comunichi che non è fattibile senza posticipo.</label>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question">
+            <h3>4. Ricevi un feedback deciso: la tua storyline non è abbastanza incisiva.</h3>
+            <label><input type="radio" name="q4" value="2"> A. Chiedi input specifici, ringrazi e migliori subito.</label><br>
+            <label><input type="radio" name="q4" value="0"> B. Sottolinei che la tempistica era troppo stretta.</label><br>
+            <label><input type="radio" name="q4" value="1"> C. Fai solo revisioni minori.</label>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question">
+            <h3>5. Il manager è difficile da contattare da giorni, ma il cliente si aspetta progressi.</h3>
+            <label><input type="radio" name="q5" value="2"> A. Prendi l’iniziativa e definisci un percorso provvisorio.</label><br>
+            <label><input type="radio" name="q5" value="1"> B. Aspetti indicazioni prima di procedere.</label><br>
+            <label><input type="radio" name="q5" value="0"> C. Comunichi che puoi procedere solo dopo le direttive.</label>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question">
+            <h3>6. Il cliente rifiuta la tua raccomandazione e il morale del team cala.</h3>
+            <label><input type="radio" name="q6" value="2"> A. Riformuli la situazione e cerchi modi alternativi per influenzare.</label><br>
+            <label><input type="radio" name="q6" value="0"> B. Concordi che il cliente è troppo difficile.</label><br>
+            <label><input type="radio" name="q6" value="1"> C. Abbandoni l’argomento.</label>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question">
+            <h3>7. Un consulente junior consegna un’analisi con errori.</h3>
+            <label><input type="radio" name="q7" value="2"> A. Dai feedback costruttivi e migliori il processo.</label><br>
+            <label><input type="radio" name="q7" value="0"> B. Rifai il lavoro da solo.</label><br>
+            <label><input type="radio" name="q7" value="1"> C. Escali al manager.</label>
+        </div>
+
+        <button type="button" onclick="calculateScore()">Calcola punteggio e invia risultato</button>
+    </form>
+
+    <div id="result" class="result-box">
+        <div class="score"></div>
+        <div class="level"></div>
+        <p id="interpretation"></p>
+        <p><em>Il tuo risultato è stato registrato in modo anonimo per analisi aggregate.</em></p>
+    </div>
+</div>
+
+<script>
+function calculateScore() {
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    if (!nome) {
+        alert("Per favore inserisci il tuo nome.");
+        return;
+    }
+
+    let total = 0;
+    const form = document.getElementById("quizForm");
+
+    for (let i = 1; i <= 7; i++) {
+        const group = form["q" + i];
+        let answered = false;
+        if (group) {
+            if (group.length) {
+                for (let j = 0; j < group.length; j++) {
+                    if (group[j].checked) {
+                        total += parseInt(group[j].value);
+                        answered = true;
+                        break;
+                    }
+                }
+            } else { // singolo input
+                if (group.checked) {
+                    total += parseInt(group.value);
+                    answered = true;
+                }
+            }
+        }
+        if (!answered) {
+            alert("Per favore rispondi a tutte le domande (domanda " + i + ").");
+            return;
+        }
+    }
+
+    let level = "";
+    let interpretation = "";
+
+    if (total >= 12) {
+        level = "Eccezionale";
+        interpretation = "Altamente composto, proattivo e adattabile sotto pressione.";
+    } else if (total >= 9) {
+        level = "Forte";
+        interpretation = "Affidabile nella gestione di sé, con occasionali mancanze.";
+    } else if (total >= 5) {
+        level = "Moderato";
+        interpretation = "Regolazione emotiva o adattabilità incoerente.";
+    } else {
+        level = "Basso";
+        interpretation = "Difficoltà nel mantenere la calma, nell’iniziativa e nella comunicazione trasparente.";
+    }
+
+    document.getElementById("result").style.display = "block";
+    document.querySelector(".score").innerHTML = "Punteggio totale: " + total + "/14";
+    document.querySelector(".level").innerHTML = "Livello: " + level;
+    document.getElementById("interpretation").innerHTML = interpretation;
+
+  
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd3eQrdoIcMHo1djtz_0OW3uJyBSbA4LbUA4rpVVsBSSY-ndg/formResponse";
+
+    const data = new URLSearchParams();
+    data.append("entry.358686423", nome);  
+    data.append("entry.1679437078", email);  
+    data.append("entry.921026092", total);  
+
+    fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+    }).catch((e) => {
+        console.error("Errore nell'invio al Google Form", e);
+    });
+}
+</script>
+
+</body>
+</html>
