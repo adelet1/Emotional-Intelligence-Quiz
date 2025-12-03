@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quiz Competenze - Social Awareness</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 850px;
+        margin: auto;
+        background: #fff;
+        padding: 25px 35px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    .question {
+        margin-bottom: 25px;
+        padding: 15px;
+        background: #fafafa;
+        border-left: 4px solid #1976d2;
+        border-radius: 6px;
+    }
+    .question h3 {
+        margin-top: 0;
+    }
+    button {
+        background: #1976d2;
+        color: white;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #0f5ba8;
+    }
+    .result-box {
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 8px;
+        background: #e3f2fd;
+        display: none;
+    }
+    .score {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .level {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Quiz – Intelligenza Emotiva (Social Awareness)</h1>
+
+    <form id="quizForm">
+
+        <!-- Q1 -->
+        <div class="question">
+            <h3>1. Durante un workshop con il cliente, noti che alcuni partecipanti si scambiano occhiate e diventano più silenziosi dopo la tua raccomandazione.</h3>
+            <label><input type="radio" name="q1" value="1"> A. Presumi che siano d’accordo, visto che nessuno si oppone verbalmente.</label><br>
+            <label><input type="radio" name="q1" value="2"> B. Chiedi come percepiscono la proposta ed esplori eventuali preoccupazioni.</label><br>
+            <label><input type="radio" name="q1" value="0"> C. Passi alla slide successiva per rispettare l’agenda.</label>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question">
+            <h3>2. Un collega solitamente energico questa settimana è più silenzioso e distaccato.</h3>
+            <label><input type="radio" name="q2" value="1"> A. Presumi che sia solo stanco e lo lasci stare.</label><br>
+            <label><input type="radio" name="q2" value="0"> B. Informi il manager che sei preoccupato per le sue performance.</label><br>
+            <label><input type="radio" name="q2" value="2"> C. Ti confronti in privato per capire cosa potrebbe stargli pesando.</label>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question">
+            <h3>3. In una riunione cliente, due stakeholder senior si contraddicono in modo sottile nei loro commenti.</h3>
+            <label><input type="radio" name="q3" value="1"> A. Ignori la tensione, dato che nessuno la esplicita apertamente.</label><br>
+            <label><input type="radio" name="q3" value="2"> B. Riconosci la tensione e medi le loro prospettive per mantenere la discussione produttiva.</label><br>
+            <label><input type="radio" name="q3" value="0"> C. Interrompi la conversazione e chiedi loro di risolvere il tema offline.</label>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question">
+            <h3>4. Un cliente sembra impaziente e continua a guardare l’orologio durante il tuo aggiornamento.</h3>
+            <label><input type="radio" name="q4" value="1"> A. Continui normalmente: hanno prenotato loro la riunione.</label><br>
+            <label><input type="radio" name="q4" value="2"> B. Accorci le spiegazioni, ti concentri sui punti essenziali e ti adatti al loro bisogno di efficienza.</label><br>
+            <label><input type="radio" name="q4" value="0"> C. Chiedi direttamente se trovano la discussione noiosa.</label>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question">
+            <h3>5. Noti che una specifica regione reagisce male alla tua raccomandazione, ma non esprime apertamente resistenza.</h3>
+            <label><input type="radio" name="q5" value="1"> A. Presumi che il silenzio indichi allineamento.</label><br>
+            <label><input type="radio" name="q5" value="0"> B. Escali alla leadership per far approvare comunque la raccomandazione.</label><br>
+            <label><input type="radio" name="q5" value="2"> C. Riconosci i segnali e chiedi il loro punto di vista in modo rispettoso e aperto.</label>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question">
+            <h3>6. Il team di progetto appare teso dopo una settimana difficile e il morale è visibilmente basso.</h3>
+            <label><input type="radio" name="q6" value="0"> A. Porti avanti l’agenda per evitare ritardi sulla pianificazione.</label><br>
+            <label><input type="radio" name="q6" value="2"> B. Fermi il meeting per riconoscere il clima e inviti il team a fare un “reset” insieme.</label><br>
+            <label><input type="radio" name="q6" value="1"> C. Proponi una pausa di team ma prosegui comunque come da piano, a prescindere dalle reazioni.</label>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question">
+            <h3>7. Ti unisci a un nuovo cliente e noti rapidamente dinamiche di potere non dette nel processo decisionale.</h3>
+            <label><input type="radio" name="q7" value="1"> A. Tratti tutti allo stesso modo e eviti di adattarti alle gerarchie informali.</label><br>
+            <label><input type="radio" name="q7" value="2"> B. Osservi i pattern, identifichi gli influencer e adatti la comunicazione alla struttura informale.</label><br>
+            <label><input type="radio" name="q7" value="0"> C. Chiedi direttamente in una riunione plenaria chi prende davvero le decisioni.</label>
+        </div>
+
+        <button type="button" onclick="calculateScore()">Calcola punteggio</button>
+    </form>
+
+    <div id="result" class="result-box">
+        <div class="score"></div>
+        <div class="level"></div>
+        <p id="interpretation"></p>
+    </div>
+</div>
+
+<script>
+function calculateScore() {
+    let total = 0;
+    const form = document.getElementById("quizForm");
+
+    for (let i = 1; i <= 7; i++) {
+        const group = form["q" + i];
+        let answered = false;
+        if (group) {
+            if (group.length) {
+                for (let j = 0; j < group.length; j++) {
+                    if (group[j].checked) {
+                        total += parseInt(group[j].value);
+                        answered = true;
+                        break;
+                    }
+                }
+            } else {
+                if (group.checked) {
+                    total += parseInt(group.value);
+                    answered = true;
+                }
+            }
+        }
+        if (!answered) {
+            alert("Per favore rispondi a tutte le domande (domanda " + i + ").");
+            return;
+        }
+    }
+
+    let level = "";
+    let interpretation = "";
+
+    if (total >= 12) {
+        level = "Eccezionale";
+        interpretation = "Altamente sintonizzato su segnali emotivi, indizi non verbali e dinamiche di gruppo.";
+    } else if (total >= 9) {
+        level = "Forte";
+        interpretation = "Leggi correttamente la maggior parte dei segnali, con qualche mancata rilevazione occasionale.";
+    } else if (total >= 5) {
+        level = "Moderato";
+        interpretation = "Cogli alcuni segnali, ma sei spesso focalizzato sui compiti più che sulle dinamiche.";
+    } else {
+        level = "Basso";
+        interpretation = "Tendi a perdere segnali emotivi o dinamiche di gruppo importanti.";
+    }
+
+    document.getElementById("result").style.display = "block";
+    document.querySelector(".score").innerHTML = "Punteggio totale: " + total + "/14";
+    document.querySelector(".level").innerHTML = "Livello: " + level;
+    document.getElementById("interpretation").innerHTML = interpretation;
+
+    // --- INVIO ANONIMO AL GOOGLE FORM (SOLO PUNTEGGIO) ---
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdDS-SG00yLPM_TOIpSs2Gohb_yuPOlqNdVrO2hHxuZApXH8w/formResponse";
+
+    const data = new URLSearchParams();
+    // entry.552582809 = campo "Punteggio" nel tuo Google Form
+    data.append("entry.552582809", total);
+
+    fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+    }).catch((e) => {
+        console.error("Errore nell'invio al Google Form", e);
+    });
+}
+</script>
+
+</body>
+</html>
