@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quiz Competenze - Self Awareness</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f7f7f7;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 850px;
+        margin: auto;
+        background: #fff;
+        padding: 25px 35px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    .question {
+        margin-bottom: 25px;
+        padding: 15px;
+        background: #fafafa;
+        border-left: 4px solid #1976d2;
+        border-radius: 6px;
+    }
+    .question h3 {
+        margin-top: 0;
+    }
+    button {
+        background: #1976d2;
+        color: white;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #0f5ba8;
+    }
+    .result-box {
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: 8px;
+        background: #e3f2fd;
+        display: none;
+    }
+    .score {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    .level {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h1>Quiz – Intelligenza Emotiva (Self Awareness)</h1>
+
+    <form id="quizForm">
+
+        <!-- Q1 -->
+        <div class="question">
+            <h3>1. Durante una discussione con il cliente, noti un peso al petto e che il tuo tono si fa più tagliente.</h3>
+            <label><input type="radio" name="q1" value="2"> A. Riconosci il cambiamento emotivo, ti fermi un momento e reimposti intenzionalmente il tono.</label><br>
+            <label><input type="radio" name="q1" value="0"> B. Continui a parlare come previsto per non perdere il controllo della conversazione.</label><br>
+            <label><input type="radio" name="q1" value="1"> C. Smetti di intervenire e speri che il momento passi.</label>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question">
+            <h3>2. Stai preparando una raccomandazione ma ti rendi conto di essere molto legato alla tua ipotesi iniziale.</h3>
+            <label><input type="radio" name="q2" value="2"> A. Rifletti su come questo attaccamento emotivo possa condizionare il tuo giudizio e rivaluti i dati in modo oggettivo.</label><br>
+            <label><input type="radio" name="q2" value="1"> B. Mantieni l’ipotesi perché cambiare direzione ora sarebbe inefficiente.</label><br>
+            <label><input type="radio" name="q2" value="0"> C. Chiedi a qualcuno di rivederla ma eviti di mettere davvero in discussione le tue assunzioni.</label>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question">
+            <h3>3. Un stakeholder contesta la tua conclusione davanti al team. Ti senti in imbarazzo e sulla difensiva.</h3>
+            <label><input type="radio" name="q3" value="2"> A. Noti la reazione, fai un respiro e poni una domanda di chiarimento per comprendere davvero la sua prospettiva.</label><br>
+            <label><input type="radio" name="q3" value="0"> B. Difendi subito la tua conclusione per proteggere la tua credibilità.</label><br>
+            <label><input type="radio" name="q3" value="1"> C. Parli poco per il resto della riunione per evitare ulteriore disagio.</label>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question">
+            <h3>4. Ti senti improvvisamente sopraffatto mentre prepari un workshop importante.</h3>
+            <label><input type="radio" name="q4" value="2"> A. Identifichi la fonte del sovraccarico e suddividi il lavoro in passi gestibili.</label><br>
+            <label><input type="radio" name="q4" value="1"> B. Vai avanti ignorando la sensazione senza analizzarla.</label><br>
+            <label><input type="radio" name="q4" value="0"> C. Fai un passo indietro e lasci che siano gli altri a gestire i compiti chiave.</label>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question">
+            <h3>5. Prima di presentare a un nuovo cliente, ti senti insolitamente in ansia.</h3>
+            <label><input type="radio" name="q5" value="2"> A. Riconosci l’ansia, esplori che cosa la sta generando e usi preparazione o tecniche di grounding per ritrovare stabilità.</label><br>
+            <label><input type="radio" name="q5" value="1"> B. Ignori la sensazione e conti solo sull’adrenalina.</label><br>
+            <label><input type="radio" name="q5" value="0"> C. Chiedi a qualcun altro di presentare al tuo posto.</label>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question">
+            <h3>6. Ti accorgi che la frustrazione verso un collega ti porta a interpretare il suo lavoro in modo più negativo del solito.</h3>
+            <label><input type="radio" name="q6" value="2"> A. Ti fermi, riconosci questo bias emotivo e rivedi il suo lavoro in modo più oggettivo.</label><br>
+            <label><input type="radio" name="q6" value="0"> B. Fornisci un feedback diretto basandoti sulla tua prima impressione.</label><br>
+            <label><input type="radio" name="q6" value="1"> C. Eviti di dare feedback per non alimentare il conflitto.</label>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question">
+            <h3>7. Dopo una settimana intensa, entri in una call con il cliente sentendoti stanco e meno paziente del solito.</h3>
+            <label><input type="radio" name="q7" value="2"> A. Riconosci la tua bassa energia e regoli intenzionalmente tono e ritmo per la conversazione.</label><br>
+            <label><input type="radio" name="q7" value="1"> B. Porti avanti la call con il minimo coinvolgimento.</label><br>
+            <label><input type="radio" name="q7" value="0"> C. Lasci che sia il team a condurre la conversazione senza spiegare il perché.</label>
+        </div>
+
+        <button type="button" onclick="calculateScore()">Calcola punteggio</button>
+    </form>
+
+    <div id="result" class="result-box">
+        <div class="score"></div>
+        <div class="level"></div>
+        <p id="interpretation"></p>
+    </div>
+</div>
+
+<script>
+function calculateScore() {
+    let total = 0;
+    const form = document.getElementById("quizForm");
+
+    for (let i = 1; i <= 7; i++) {
+        const group = form["q" + i];
+        let answered = false;
+        if (group) {
+            if (group.length) {
+                for (let j = 0; j < group.length; j++) {
+                    if (group[j].checked) {
+                        total += parseInt(group[j].value);
+                        answered = true;
+                        break;
+                    }
+                }
+            } else {
+                if (group.checked) {
+                    total += parseInt(group.value);
+                    answered = true;
+                }
+            }
+        }
+        if (!answered) {
+            alert("Per favore rispondi a tutte le domande (domanda " + i + ").");
+            return;
+        }
+    }
+
+    let level = "";
+    let interpretation = "";
+
+    if (total >= 12) {
+        level = "Eccezionale";
+        interpretation = "Approfondita consapevolezza emotiva; costante attenzione a trigger, cambiamenti e impatto.";
+    } else if (total >= 9) {
+        level = "Forte";
+        interpretation = "Buona consapevolezza, con qualche punto cieco occasionale.";
+    } else if (total >= 5) {
+        level = "Moderato";
+        interpretation = "Riesci a riconoscere le emozioni a volte; puoi perdere segnali più sottili.";
+    } else {
+        level = "Basso";
+        interpretation = "Consapevolezza limitata delle emozioni interne, dei trigger e dell’impatto sui comportamenti.";
+    }
+
+    document.getElementById("result").style.display = "block";
+    document.querySelector(".score").innerHTML = "Punteggio totale: " + total + "/14";
+    document.querySelector(".level").innerHTML = "Livello: " + level;
+    document.getElementById("interpretation").innerHTML = interpretation;
+
+    // --- INVIO ANONIMO AL GOOGLE FORM ---
+    const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeaXu-q4dNCfCvjV3fH0M8n3YXsAimYOcsIgXEHYfUxiHjp8g/formResponse";
+
+    const data = new URLSearchParams();
+    data.append("entry.987787759", total); // ID Campo Punteggio
+
+    fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+    }).catch((e) => {
+        console.error("Errore nell'invio al Google Form", e);
+    });
+}
+</script>
+
+</body>
+</html>
